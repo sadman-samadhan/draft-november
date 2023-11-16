@@ -1,0 +1,376 @@
+/* App.css or your custom CSS file */
+@import "~font-awesome/css/font-awesome.css";
+.fa {
+  font-size: 30px;
+}
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.work {
+  font-size: 8px;
+  font-weight: bold;
+}
+
+.fixed-buttons {
+  position: absolute;
+  bottom: 0;
+  left: 0; /* Adjust this if you want to position it on the left side */
+
+  background-color: #fff; /* Set a background color if needed */
+  /* Adjust the padding as needed */
+  display: flex;
+  justify-content: space-between; /* To separate the buttons */
+}
+.fixed-buttons .btn {
+  background-color: #007bff; /* Custom background color */
+  border-radius: 10px; /* Rounded corners */
+  padding: 10px 20px;
+  color: #fff;
+  margin-left: 10px; /* Text color */
+}
+
+.fixed-buttons .btn-secondary {
+  background-color: #6c757d; /* Custom background color for the secondary button */
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a background color for the entire page */
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+/* Main container for the editor */
+.editorMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.editorContainer {
+  width: 90%;
+}
+/* Container for the editor and media sidebar */
+.addButtons {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.urlInput {
+  margin-right: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Style the buttons */
+.btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+/* Style the media blocks */
+.media {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Style the editor content area */
+.editor {
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  cursor: text;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 2px;
+  margin-bottom: 2em;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  flex-grow: 1;
+  position: relative;
+  min-height: 400px;
+  min-width: 300px;
+}
+
+.editorSection {
+  width: 100%;
+}
+/* Style the toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.toolbar button {
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+/* Media sidebar styles */
+.media-sidebar {
+  position: fixed;
+  top: 350px;
+  right: 0px;
+  width: 250px;
+  height: 50%;
+  background-color: #fff;
+  box-shadow: 8px 0 12px rgba(0, 0, 0, 0.1);
+  transition: right 0.5s ease-in-out;
+  text-align: left;
+  z-index: 222;
+}
+/*right align media sidebar after open*/
+.media-sidebar.open {
+  left: 0;
+}
+/* Block options styles */
+.blockOptions {
+  position: fixed;
+  bottom: -100px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+  transition: bottom 0.3s ease-in-out;
+}
+
+/* Other styles */
+b,
+strong {
+  font-weight: bold;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+u {
+  text-decoration: underline;
+}
+
+s {
+  text-decoration: line-through;
+}
+
+code {
+  font-family: monospace;
+}
+.add-media-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  color: #fff;
+  font-weight: bolder;
+  border-radius: 50%;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.add-media-icon:hover {
+  background-color: #585858;
+}
+
+.add-media-option {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+
+  transition: background-color 0.3s ease;
+  position: relative; /* Add this rule to establish a positioning context */
+  border: 1px solid rgb(94, 89, 89);
+}
+
+.add-media-option:hover {
+  background-color: #f1f1f1;
+}
+
+.add-block-option {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+  border-bottom: 1px solid #ddd;
+  transition: all 1s ease;
+  position: relative;
+}
+
+.block-options {
+  display: none; /* Hide the submenu by default */
+  cursor: pointer;
+  padding: 8px 0;
+  font-size: 16px;
+  left: 0%;
+  background-color: #fff;
+  padding: 10px;
+  border-top: none;
+  list-style: none;
+  box-shadow: none;
+  position: relative;
+  margin-left: 0px;
+  left: 30px;
+}
+.block-options div {
+  padding: 10px;
+  font-size: 16px;
+}
+.block-options div:hover {
+  font-weight: bold; /*change the font weight on hover*/
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+.block-options div:last-child {
+  border-bottom: none;
+  margin-bottom: 0px;
+}
+.add-block-option:hover .block-options {
+  display: block; /* Show the submenu on hover */
+}
+
+/*Image popup*/
+
+.image-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.image-popup-content {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.image-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.image-popup-title {
+  font-size: 18px;
+}
+
+.image-popup-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+}
+
+.image-popup-body {
+  margin-bottom: 10px;
+}
+
+.image-popup-body input[type="text"] {
+  width: 100%;
+  padding: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+.image-popup-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.image-popup-insert {
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.image-popup-insert:hover {
+  background-color: #585858;
+}
+.shadow {
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 5px;
+  margin-right: 3px;
+  margin-bottom: 3px;
+}
+.no-padding {
+  padding: 0;
+}
+.no-gutters {
+  margin-right: 0rem !important;
+}
